@@ -41,7 +41,7 @@ const RegisterController = async (req, res) => {
         .save()
         .then(() => {
           res.status(201).json({
-            message: `User registered successfully. Please verify your email. OTP: ${otp}`,
+            message: `User registered successfully. Please verify your email.`,
           });
         })
         .catch((error) => {
