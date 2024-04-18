@@ -19,7 +19,7 @@ mongoose
   .catch((err) => {
     console.log("Error while connecting to MongoDB");
   });
-const PORT = APP_PORT || 3000;
-app.listen(PORT, () => {
+
+app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
