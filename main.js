@@ -7,7 +7,7 @@ const routes = require("./routes");
 const app = express();
 
 app.use(middlewares);
-app.use(routes);
+app.use("/api", routes);
 
 // * ------------------------------ Database and Server Connection ------------------------------
 

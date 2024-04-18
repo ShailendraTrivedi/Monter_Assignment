@@ -31,8 +31,12 @@ const RegisterController = async (req, res) => {
         log(error.message);
         return res.status(500).json({ error: "Failed to send OTP" });
       }
-      console.log("Email sent: " + info.response);
-      const user = new UserModel({ email, password, otp });
+
+      req.app.locals.email = email;
+      req.app.locals.otp = otp;
+      req.app.locals.otpExpiry = Date.now() + 5 * 60 * 1000;
+
+      const user = new UserModel({ email, password });
       user
         .save()
         .then(() => {
