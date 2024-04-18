@@ -12,7 +12,7 @@ app.use("/api", routes);
 // * ------------------------------ Database and Server Connection ------------------------------
 
 mongoose
-  .connect(`${ATLAS_DATABASE_URL}/monter_assignment`)
+  .connect(`${ATLAS_DATABASE_URL}`)
   .then((result) => {
     console.log("Connected to MongoDB");
   })
